@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   
-  <ItemGroup>
-    <Folder Include="Factory\" />
-    <Folder Include="AbstractFactory\" />
-    <Folder Include="Prototype\" />
-    <Folder Include="Singleton\" />
-  </ItemGroup>
 </Project>
