@@ -1,22 +1,26 @@
-﻿using Patterns.AbstractFactory;
-using Patterns.Prototype;
+﻿using Patterns.BuilderPattern;
 
 namespace Patterns;
-
-
 public class Program
 {
+
     public static void Main(string[] args)
     {
-        Employee john = new Employee();
-        john.names = new string[] { "John", "Smith" };
-        john.address = new Address("London Road", 123);
-        john.salary = 123000;
+        var director = new Director();
+        var builder = new ConcreteBuilder();
+        director.Builder = builder;
 
+        System.Console.WriteLine("Standard Basic Product");
+        director.BuildMinimalViableProduct();
+        System.Console.WriteLine(builder.GetProduct().ListParts());
 
-        var jane = john.DeepCopy();
-        jane.address.houseNumber = 321;
-        Console.WriteLine(john);
-        Console.WriteLine(jane);
+        System.Console.WriteLine("Standard full Product");
+        director.BuildFeatureProdcut();
+        System.Console.WriteLine(builder.GetProduct().ListParts());
+
+        System.Console.WriteLine("Custom Build");
+        builder.BuildPartA();
+        builder.BuildPartC();
+        System.Console.WriteLine(builder.GetProduct().ListParts());
     }
 }

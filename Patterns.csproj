@@ -6,15 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Factory\" />
-    <None Remove="AbstractFactory\" />
-    <None Remove="Prototype\" />
-  </ItemGroup>
+  
   <ItemGroup>
     <Folder Include="Factory\" />
     <Folder Include="AbstractFactory\" />
     <Folder Include="Prototype\" />
+    <Folder Include="Singleton\" />
   </ItemGroup>
 </Project>
